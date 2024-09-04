@@ -125,16 +125,34 @@ function initSwiper() {
 
   swiperList.forEach((swiper) => {
     let startX;
+    let startY;
+    let isHorizontalSwipe = false; // 수평 스와이프 감지 플래그
   
     swiper.addEventListener('touchstart', function(e) {
       startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isHorizontalSwipe = false; // 초기화
     });
   
     swiper.addEventListener('touchmove', function(e) {
       const touchX = e.touches[0].clientX;
-      const difference = touchX - startX;
+      const touchY = e.touches[0].clientY;
+      const differenceX = touchX - startX;
+      const differenceY = touchY - startY;
   
-      if (difference < -50) { // 왼쪽으로 스와이프
+      // 첫 움직임에서 수평 스와이프 여부를 감지
+      if (!isHorizontalSwipe) {
+        if (Math.abs(differenceX) > Math.abs(differenceY)) {
+          isHorizontalSwipe = true;
+        } else {
+          return; // 수직으로 스크롤이 발생한 경우 더 이상 처리하지 않음
+        }
+      }
+
+      // 수평 스와이프가 감지되면 스크롤 방지
+      e.preventDefault();
+
+      if (differenceX < -50) { // 왼쪽으로 스와이프
         // 모든 swipe-box에서 swiped 클래스를 제거
         swiperList.forEach(box => {
           if (box !== swiper) {
@@ -142,7 +160,7 @@ function initSwiper() {
           }
         });
         swiper.classList.add('swiped');
-      } else if (difference > 50) { // 오른쪽으로 스와이프
+      } else if (differenceX > 50) { // 오른쪽으로 스와이프
         swiper.classList.remove('swiped');
       }
     });

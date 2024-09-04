@@ -112,7 +112,7 @@ button.v-all-btn {
     content: "";
     width: 14px;
     height: 14px;
-    background: url(../../../assets/images/icon_plus_2.svg) no-repeat;
+    background: url(../images/icon_plus_2.svg) no-repeat;
     display: block;
   }
 
@@ -353,7 +353,7 @@ button.v-all-btn {
       position: absolute;
       top: -39px;
       left: 11px;
-      background: url(../../../assets/images/character.svg) no-repeat;
+      background: url(../images/character.svg) no-repeat;
       background-size: 35px 45px;
     }
 
@@ -372,7 +372,7 @@ button.v-all-btn {
           position: relative;
           line-height: 24px;
           padding: 18px 20px 18px 40px;
-          background: url(../../../assets/images/icon_ac_1.svg) no-repeat 18px center;
+          background: url(../images/icon_ac_1.svg) no-repeat 18px center;
           position: relative;
           display: block;
           text-align: left;
@@ -388,7 +388,7 @@ button.v-all-btn {
             display: block;
             width: 18px;
             height: 18px;
-            background: url(../../../assets/images/icon_arrow_down_2.svg) no-repeat;
+            background: url(../images/icon_arrow_down_2.svg) no-repeat;
             position: absolute;
             top: 50%;
             right: 20px;
@@ -486,7 +486,7 @@ button.v-all-btn {
         > h2 {
           > button {
             &:after {
-              background: url(../../../assets/images/icon_arrow_up_2.svg) no-repeat;
+              background: url(../images/icon_arrow_up_2.svg) no-repeat;
             }
           }
         }
@@ -549,7 +549,7 @@ button.v-all-btn {
     > button {
       width: 100%;
       height: 64px;
-      background: url(../../../assets/images/icon_ac_2.svg) no-repeat 18px center var(--white);
+      background: url(../images/icon_ac_2.svg) no-repeat 18px center var(--white);
       padding: 18px;
       color: var(--black);
       font-size: 14px;
@@ -567,7 +567,7 @@ button.v-all-btn {
         display: block;
         width: 18px;
         height: 18px;
-        background: url(../../../assets/images/icon_arrow_right2.svg) no-repeat;
+        background: url(../images/icon_arrow_right2.svg) no-repeat;
         position: absolute;
         top: 50%;
         right: 20px;
@@ -624,7 +624,7 @@ button.v-all-btn {
       position: absolute;
       top: -39px;
       left: 11px;
-      background: url(../../../assets/images/character.svg) no-repeat;
+      background: url(../images/character.svg) no-repeat;
       background-size: 35px 45px;
     }
 
@@ -687,7 +687,7 @@ button.v-all-btn {
     overflow: hidden;
     height: auto;
     padding-left: 40px;
-    background: url(../../../assets/images/icon_hgpt.svg) no-repeat 0 top;
+    background: url(../images/icon_hgpt.svg) no-repeat 0 top;
   }
 
   .hgpt-msg + .line {
@@ -702,7 +702,7 @@ button.v-all-btn {
     width: 100%;
     height: 30px;
     padding-left: 40px;
-    background: url(../../../assets/images/icon_hgpt.svg) no-repeat 0 top;
+    background: url(../images/icon_hgpt.svg) no-repeat 0 top;
     position: relative;
     display: flex;
     justify-content: flex-start;
@@ -839,7 +839,7 @@ button.v-all-btn {
       top: 18px;
       width: 24px;
       height: 24px;
-      background: url(../../../assets/images/icon_close.svg) no-repeat 6px 5px;
+      background: url(../images/icon_close.svg) no-repeat 6px 5px;
     }
   }
 

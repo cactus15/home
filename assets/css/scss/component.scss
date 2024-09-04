@@ -138,8 +138,8 @@ div.main {
           line-height: 36px;
           text-align: center;
           font-size: 24px;
-          background: url(../images/img_profile.svg) no-repeat center top;
-          background-size: 120px;
+          background: url(../images/img_profile_main.svg) no-repeat center top;
+          background-size: 130px;
 
           strong {
             font-weight: 800;
@@ -352,26 +352,26 @@ div.aside {
 
             &.pc {
               &:before {
-                background: url(../../../assets/images/icon_pc.svg) center center no-repeat var(--basic_ee);
+                background: url(../images/icon_pc.svg) center center no-repeat var(--basic_ee);
               }  
             }
   
             &.mobile {
               &:before {
-                background: url(../../../assets/images/icon_mobile.svg) center center no-repeat var(--basic_ee);
+                background: url(../images/icon_mobile.svg) center center no-repeat var(--basic_ee);
               }
             }
   
             &.on {
               &.pc {
                 &:before {
-                  background: url(../../../assets/images/icon_pc_on.svg) center center no-repeat var(--purple_s);
+                  background: url(../images/icon_pc_on.svg) center center no-repeat var(--purple_s);
                 }
               }
     
               &.mobile {
                 &:before {
-                  background: url(../../../assets/images/icon_mobile_on.svg) center center no-repeat var(--purple_s);
+                  background: url(../images/icon_mobile_on.svg) center center no-repeat var(--purple_s);
                 }
               }
   
@@ -403,9 +403,9 @@ div.aside {
                 width: 242px;
                 line-height: 22px;
                 background: var(--white);
-                white-space: nowrap;       /* 텍스트를 한 줄로 표시 */
-                overflow: hidden;          /* 넘치는 텍스트를 숨김 */
-                text-overflow: ellipsis;   /* 말줄임표(...)를 표시 */
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
               }
   
               &:last-child {

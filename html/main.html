@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no, address=no, email=no" />
+
+<link rel="preload" href="../assets/fonts/Pretendard-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="../assets/fonts/Pretendard-Bold.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="../assets/fonts/Pretendard-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="../assets/fonts/Pretendard-Medium.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="../assets/fonts/Pretendard-Regular.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" type="text/css" href="../assets/js/lib/overlayscrollbars/overlayscrollbars.min.css" />
+<link rel="stylesheet" type="text/css" href="../assets/js/lib/toastify/toastify.min.css" />
+<link rel="stylesheet" type="text/css" href="../assets/js/lib/tabby/tabby-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../assets/js/lib/sweetalert2/sweetalert2.min.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/global.min.css" />
+
+<script type="text/javascript" src="../assets/js/lib/overlayscrollbars/overlayscrollbars.browser.es6.min.js" defer></script>
+<script type="text/javascript" src="../assets/js/lib/toastify/toastify-js.js"></script>
+<script type="text/javascript" src="../assets/js/lib/tabby/tabby.polyfills.min.js"></script>
+<script type="text/javascript" src="../assets/js/lib/sweetalert2/sweetalert2.min.js"></script>
+<script type="text/javascript" src="../assets/js/common.js"></script>
+
+<title>Chat Bot</title>
+
+  </head>
+  <body>
+    <div id="root">
+      <div class="main">
+        <!-- header s -->
+        <header class="top-bar">
+  <button type="button" class="history-btn" onclick="modal.show('div.aside');">이력보기</button>
+  <h1>지식 챗봇</h1>
+  <button type="button" class="close-btn" onclick="Swal.fire({title: '지식챗봇을 종료할까요?', text: '인사시스템 첫 화면으로 돌아갑니다.', confirmButtonText: '네', cancelButtonText:'아니오', showCancelButton: true});">닫기</button>
+</header>
+
+        <!-- header e -->
+
+        <!-- content s -->
+        <div class="content" id="main-content">
+          <div class="chat">
+            <div class="init">
+              <header>
+                <strong>안녕하세요. 김하나과장님</strong>
+                <br />무엇을 도와드릴까요?
+              </header>
+
+              <div class="list">
+                <ul>
+                  <li>
+                    <a href="#">학자금 지급</a>
+                  </li>
+                  <li>
+                    <a href="#">근태신청</a>
+                  </li>
+                  <li>
+                    <a href="#">급여명세서</a>
+                  </li>
+                  <li>
+                    <a href="#">증명서 신청/발급</a>
+                  </li>
+                  <li>
+                    <a href="#">복리후생</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-menu">
+            <button type="button" class="history-btn">내 이력 보기</button>
+          </div>
+        </div>
+        <!-- content e -->
+
+        <!-- prompt s -->
+        <div class="prompt">
+  <button type="button" class="home-btn">홈으로</button>
+  <div class="input-wrap">
+    <input type="text" placeholder="지식챗봇에게 물어보세요." oninput="this.nextElementSibling.disabled = !this.value;" />
+    <button type="button" class="send-btn" onclick="toastify('하나포탈로 전송되었습니다.');" disabled>입력</button>
+  </div>
+</div>
+
+        <!-- prompt e -->
+
+        <!-- aside s -->
+        <div class="aside modal">
+  <div class="container">
+    <header>
+      <button type="button" class="close-btn" onclick="modal.close(this);">닫기</button>
+
+      <h1>
+        <span>내 이력 보기</span>
+        <button>전체삭제</button>
+      </h1>
+    </header>
+
+    <div class="list swiper-list">
+      <dl>
+        <dt>2024.07.29</dt>
+        <dd>
+          <div class="pc on">
+            <div class="inner">
+              <a href="#">근태신청</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+          <div class="mobile">
+            <div class="inner">
+              <a href="#">인사시스템</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+          <div class="pc">
+            <div class="inner">
+              <a href="#">텍스트 최대 케이스 최대케이스 최대 케이스 최대케이스</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+          <div class="mobile">
+            <div class="inner">
+              <a href="#">의료비지원</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+        </dd>
+        <dt>2024.07.28</dt>
+        <dd>
+          <div class="pc">
+            <div class="inner">
+              <a href="#">근태신청</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+          <div class="mobile">
+            <div class="inner">
+              <a href="#">인사시스템</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+          <div class="pc">
+            <div class="inner">
+              <a href="#">텍스트 최대 케이스 최대케이스 최대 케이스 최대케이스</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+          <div class="mobile">
+            <div class="inner">
+              <a href="#">의료비지원</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+        </dd>
+        <dt>2024.07.27</dt>
+        <dd>
+          <div class="pc">
+            <div class="inner">
+              <a href="#">근태신청</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+          <div class="mobile">
+            <div class="inner">
+              <a href="#">인사시스템</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+          <div class="pc">
+            <div class="inner">
+              <a href="#">텍스트 최대 케이스 최대케이스 최대 케이스 최대케이스</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+          <div class="mobile">
+            <div class="inner">
+              <a href="#">의료비지원</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+        </dd>
+        <dt>2024.07.26</dt>
+        <dd>
+          <div class="pc">
+            <div class="inner">
+              <a href="#">근태신청</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+          <div class="mobile">
+            <div class="inner">
+              <a href="#">인사시스템</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+          <div class="pc">
+            <div class="inner">
+              <a href="#">텍스트 최대 케이스 최대케이스 최대 케이스 최대케이스</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+          <div class="mobile">
+            <div class="inner">
+              <a href="#">의료비지원</a>
+              <button type="button">삭제</button>
+            </div>
+          </div>
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="dim" onclick="modal.close(this);"></div>
+</div>
+
+        <!-- aside e -->
+      </div>
+    </div>
+  </body>
+</html>

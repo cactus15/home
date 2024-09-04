@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat Bot - Component</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no, address=no, email=no" />
+
+<link rel="preload" href="./assets/fonts/Pretendard-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="./assets/fonts/Pretendard-Bold.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="./assets/fonts/Pretendard-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="./assets/fonts/Pretendard-Medium.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="./assets/fonts/Pretendard-Regular.woff2" as="font" type="font/woff2" crossorigin />
+
+<link rel="stylesheet" type="text/css" href="./assets/js/lib/overlayscrollbars/overlayscrollbars.min.css" />
+<link rel="stylesheet" type="text/css" href="./assets/js/lib/toastify/toastify.min.css" />
+<link rel="stylesheet" type="text/css" href="./assets/js/lib/tabby/tabby-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="./assets/js/lib/sweetalert2/sweetalert2.min.css" />
+<link rel="stylesheet" type="text/css" href="./assets/css/global.min.css" />
+
+<script type="text/javascript" src="./assets/js/lib/overlayscrollbars/overlayscrollbars.browser.es6.min.js" defer></script>
+<script type="text/javascript" src="./assets/js/lib/toastify/toastify-js.js"></script>
+<script type="text/javascript" src="./assets/js/lib/tabby/tabby.polyfills.min.js"></script>
+<script type="text/javascript" src="./assets/js/lib/sweetalert2/sweetalert2.min.js"></script>
+<script type="text/javascript" src="./assets/js/common.js"></script>
+
+<title>Chat Bot</title>
+
+  </head>
+  <body>
+    <div class="p-10 overflow-y-auto h-full">
+      <h1 class="text-24 text-center font-bold mb-40">[ COMPONENT ]</h1>
+
+      <h2 class="text-16 font-bold">BUTTON</h2>
+      <div class="button-box mb-40 h-80 border-2 border-dashed border-purple-500 bg-white rounded-lg">
+        <button class="btn-n">아니오</button>
+        <button class="btn-y">네</button>
+      </div>
+
+      <h2 class="text-16 font-bold">BUTTON2</h2>
+      <div class="button-box2 mb-40 h-150 border-2 border-dashed border-purple-500 bg-white rounded-lg">
+        <button class="v-all-btn mt-10">전체보기</button>
+        <button class="v-all-btn mt-20" disabled>전체보기</button>
+      </div>
+
+      <!-- tab type s -->
+      <h2 class="text-16 font-bold mb-10">TAB type-1</h2>
+      <div class="border-2 border-dashed border-purple-500 rounded-lg p-10">
+        <div class="tabs type-1 h-36">
+          <div class="tab key">키워드 추출</div>
+          <div class="tab cont">내용 요약</div>
+          <div class="tab question">관련질문 추가</div>
+        </div>
+        <div class="tab-content h-100 bg-white">
+          <div>
+            <h2>키워드 추출 Content</h2>
+            <p>첫 번째 탭의 내용입니다.</p>
+          </div>
+          <div>
+            <h2>내용 요약 Content</h2>
+            <p>두 번째 탭의 내용입니다.</p>
+          </div>
+          <div>
+            <h2>관련질문 추가 Content</h2>
+            <p>세 번째 탭의 내용입니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-16 font-bold mb-10 mt-40">TAB type-2</h2>
+      <div class="border-2 border-dashed border-purple-500 rounded-lg p-10">
+        <div class="tabs type-2 h-32">
+          <div class="tab basic">기본지식</div>
+          <div class="tab faq">FAQ</div>
+          <div class="tab rule">규정더보기</div>
+        </div>
+
+        <div class="tab-content h-100 bg-white">
+          <div>
+            <h2>기본지식 Content</h2>
+            <p>첫 번째 탭의 내용입니다.</p>
+          </div>
+          <div>
+            <h2>FAQ Content</h2>
+            <p>두 번째 탭의 내용입니다.</p>
+          </div>
+          <div>
+            <h2>규정더보기 Content</h2>
+            <p>세 번째 탭의 내용입니다.</p>
+          </div>
+        </div>
+      </div>
+      <!-- tab type e -->
+
+      <!-- Toats Popup s -->
+      <h2 class="text-16 font-bold mb-10 mt-40">Toats Popup</h2>
+      <div class="h-100 overflow-hidden bg-white relative border-2 border-dashed border-purple-500 rounded-lg p-10" id="main-content">
+        <div class="button-box mb-40 h-80">
+          <button class="btn-y" onclick="toastify('하나포탈로 전송되었습니다.');">Toast</button>
+        </div>
+      </div>
+      <!-- Toats Popup e -->
+
+      <!-- chat UI s -->
+      <h2 class="text-16 font-bold mb-10 mt-40">chat UI</h2>
+      <div class="chat border-2 border-dashed border-purple-500 rounded-lg p-10">
+        <div class="accordion-container">
+          <div class="ac is-active">
+            <h2 class="ac-header">
+              <button type="button" class="ac-trigger" onclick="this.closest('.ac').classList.toggle('is-active');">당행 지식 답변입니다.</button>
+            </h2>
+            <div class="ac-panel">
+              <div class="ac-text">
+                <section class="basic">
+                  <h3>기본지식</h3>
+                  <div>
+                    회사 인사시스템에서 근태신청을 하는 방법에 대해 자세히 안내드립니다. 먼저, 휴가 신청을 위해 인사시스템에 로그인한 후 휴가 신청 메뉴를 선택합니다. 이 메뉴에서 휴가 종류(연차, 병가, 특별휴가 등)를 선택하고, 휴가 시작일과 종료일을 입력한 뒤 휴가 회사 인사시스템에서 근태신청을 하는 방법에 대해 자세히 안내드립니다. 먼저, 휴가 신청을 위해 인사시스템에 로그인한 후 휴가 신청 메뉴를
+                    선택합니다. 이 메뉴에서 휴가 종류(연차, 병가, 특별휴가 등)를 선택하고, 휴가 시작일과 종료일을 입력한 뒤 휴가
+                  </div>
+                  <button class="v-all-btn" onclick="modal.show('#modal');">전체보기</button>
+                </section>
+                <section class="faq">
+                  <h3>FAQ</h3>
+                  <div>
+                    <ul>
+                      <li><b>Q1.</b> 휴가 신청은 어떻게 진행되나요? 연차, 병가, 특별휴가 등 여러가 근...</li>
+                      <li><b>Q1.</b> 휴가 신청은 어떻게 진행되나요? 연차, 병가, 특별휴가 등 여러가 근...</li>
+                      <li><b>Q1.</b> 휴가 신청은 어떻게 진행되나요? 연차, 병가, 특별휴가 등 여러가 근...</li>
+                    </ul>
+                  </div>
+                  <button class="v-all-btn" onclick="modal.show('#modal');">전체보기</button>
+                </section>
+                <section class="rule">
+                  <h3>규정더보기</h3>
+                  <div>
+                    <ul>
+                      <li><b>Q1.</b> 휴가 신청은 어떻게 진행되나요? 연차, 병가, 특별휴가 등 여러가 근...</li>
+                      <li><b>Q1.</b> 휴가 신청은 어떻게 진행되나요? 연차, 병가, 특별휴가 등 여러가 근...</li>
+                      <li><b>Q1.</b> 휴가 신청은 어떻게 진행되나요? 연차, 병가, 특별휴가 등 여러가 근...</li>
+                    </ul>
+                  </div>
+                  <button class="v-all-btn" onclick="modal.show('#modal');">전체보기</button>
+                </section>
+              </div>
+              <p>* 링크, 이미지, 도표는 PC 지식챗봇에서 확인하세요.</p>
+            </div>
+          </div>
+          <button type="button" onclick="modal.show('#modal');">H-GPT 답변입니다.</button>
+        </div>
+
+        <!-- 당행지식 내용 없을때 -->
+        <!-- empty class 추가 -->
+        <div class="accordion-container">
+          <div class="ac is-active empty">
+            <h2 class="ac-header">
+              <button type="button" class="ac-trigger" onclick="this.closest('.ac').classList.toggle('is-active');">당행 지식 답변입니다.</button>
+            </h2>
+            <div class="ac-panel"></div>
+          </div>
+          <button type="button" onclick="modal.show('#modal');">H-GPT 답변입니다.</button>
+        </div>
+      </div>
+      <!-- chat UI e -->
+
+      <!-- chat 말풍선 s -->
+      <h2 class="text-16 font-bold mb-10 mt-40">채팅 말풍선</h2>
+      <div class="chat border-2 border-dashed border-purple-500 rounded-lg p-10">
+        <h3>1줄 케이스 / 34byte</h3>
+        <div class="line">
+          <div class="msg-me mb-20">가나다라마바사아자차카타파하가나다</div>
+        </div>
+
+        <h3>2줄 이상 케이스/ 69byte</h3>
+        <div class="line">
+          <div class="msg-me mb-20">가나다라마바사아자차카타파하가나가다라가나다라마바사아자차카타파하가</div>
+        </div>
+
+        <h3 class="mb-50">챗봇 메세지</h3>
+        <div class="msg-chat">
+          <div class="dot"></div>
+        </div>
+      </div>
+      <!-- chat 말풍선 e -->
+
+      <!-- popup s -->
+      <div id="modal" class="modal">
+        <div class="container">
+          <header class="header">
+            <h2 class="title">당행지식</h2>
+            <button class="close" onclick="modal.close(this);"></button>
+          </header>
+          <div class="content">
+            <h3>근태신청</h3>
+          </div>
+        </div>
+      </div>
+      <!-- popup e -->
+    </div>
+  </body>
+</html>

@@ -81,7 +81,9 @@ const modal = {
     return modal;
   },
   show: function (selector) {
-    this.get(selector).classList.add("is-open"); // is-open 클래스 추가
+    const modal = this.get(selector);
+    modal.classList.add("is-open"); // is-open 클래스 추가
+    modal.closest(".main").classList.add("no-scroll"); // 스크롤 가능하도록 클래스 제거
   },
   close: function (selector) {
     const modal = this.get(selector);
@@ -91,6 +93,7 @@ const modal = {
       "animationend",
       function () {
         modal.classList.remove("is-open", "is-close"); // is-open, is-close 클래스 제거
+        modal.closest(".main").classList.remove("no-scroll"); // 스크롤 가능하도록 클래스 제거
       },
       { once: true }
     );

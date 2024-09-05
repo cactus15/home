@@ -47,7 +47,7 @@ div.prompt {
   justify-content: space-between;
   align-items: center;
   gap: 14px;
-  box-shadow: 5px -2px 24px rgba(172, 157, 207, 0.10);
+  box-shadow: 5px -2px 24px rgba(172, 157, 207, 0.1);
 
   div.input-wrap {
     flex: 1;
@@ -110,6 +110,10 @@ div.main {
   flex-direction: column;
   overflow: hidden;
   position: relative;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 
   div.content {
     position: relative;
@@ -210,7 +214,7 @@ div.aside {
   top: 0;
   left: 0;
   transform: translateX(-100%);
-  
+
   &:after {
     display: none;
   }
@@ -278,7 +282,7 @@ div.aside {
           color: var(--black);
           font-size: 16px;
           font-weight: 800;
-          line-height: 28px; 
+          line-height: 28px;
           letter-spacing: -0.3px;
           text-indent: 4px;
         }
@@ -308,7 +312,7 @@ div.aside {
           color: var(--basic_04);
           font-size: 12px;
           font-weight: 500;
-          line-height: 20px; 
+          line-height: 20px;
           letter-spacing: -0.3px;
           padding-bottom: 14px;
         }
@@ -354,28 +358,28 @@ div.aside {
             &.pc {
               &:before {
                 background: url(../images/icon_pc.svg) center center no-repeat var(--basic_ee);
-              }  
+              }
             }
-  
+
             &.mobile {
               &:before {
                 background: url(../images/icon_mobile.svg) center center no-repeat var(--basic_ee);
               }
             }
-  
+
             &.on {
               &.pc {
                 &:before {
                   background: url(../images/icon_pc_on.svg) center center no-repeat var(--purple_s);
                 }
               }
-    
+
               &.mobile {
                 &:before {
                   background: url(../images/icon_mobile_on.svg) center center no-repeat var(--purple_s);
                 }
               }
-  
+
               > div.inner {
                 a {
                   color: var(--purple_p);
@@ -408,11 +412,11 @@ div.aside {
                 overflow: hidden;
                 text-overflow: ellipsis;
               }
-  
+
               &:last-child {
                 margin-bottom: 0;
               }
-  
+
               > button {
                 width: 56px;
                 height: 50px;
@@ -420,7 +424,7 @@ div.aside {
                 font-size: 13px;
                 font-weight: 600;
                 line-height: 20px;
-                background: var(--basic_02); 
+                background: var(--basic_02);
                 position: absolute;
                 top: 0;
                 right: -56px;

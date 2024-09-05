@@ -424,13 +424,23 @@ button.v-all-btn {
               > div {
                 margin: 14px 0;
                 height: 154px;
-                display: -webkit-box;
-                white-space: wrap;
-                word-break: break-all;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                -webkit-line-clamp: 7; /* 보여줄 줄 수 */
-                -webkit-box-orient: vertical;
+
+                > ul {
+                  > li {
+                    display: -webkit-box;
+                    white-space: wrap;
+                    word-break: break-all;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    margin-bottom: 11px;
+
+                    &:last-child {
+                      margin-bottom: 0;
+                    }
+                  }
+                }
               }
 
               &.basic {
@@ -442,6 +452,16 @@ button.v-all-btn {
                   font-weight: 800;
                   border-bottom: 1px solid var(--pink);
                   padding-bottom: 12px;
+                }
+
+                > div {
+                  display: -webkit-box;
+                  white-space: wrap;
+                  word-break: break-all;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 7;
                 }
               }
 
@@ -799,7 +819,7 @@ button.v-all-btn {
     &:after {
       animation: fadeOut 0.2s both;
     }
-    
+
     > .container {
       animation: slideDown 0.3s both;
     }

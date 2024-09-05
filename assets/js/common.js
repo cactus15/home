@@ -18,7 +18,8 @@ window.addEventListener("resize", function (event) {
  * 모바일 높이 조정
  */
 function setHeight() {
-  document.documentElement.style.height = `${window.innerHeight}px`;
+  const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  document.documentElement.style.height = `${height}px`;
 }
 
 /**
@@ -64,13 +65,16 @@ const modal = {
   get: function (selector) {
     let modal = null;
 
-    if (typeof selector === "string") { // 셀렉터 문자열일 경우
+    if (typeof selector === "string") {
+      // 셀렉터 문자열일 경우
       modal = document.querySelector(selector);
-    } else if (selector instanceof HTMLElement) { // 팝업 엘리먼트일 경우
+    } else if (selector instanceof HTMLElement) {
+      // 팝업 엘리먼트일 경우
       modal = selector;
     }
 
-    if (modal.classList.contains("modal") === false) { // 팝업 엘리먼트가 아니면 부모중 팝업 엘리먼트 찾기
+    if (modal.classList.contains("modal") === false) {
+      // 팝업 엘리먼트가 아니면 부모중 팝업 엘리먼트 찾기
       modal = modal.closest(".modal");
     }
 
@@ -79,14 +83,18 @@ const modal = {
   show: function (selector) {
     this.get(selector).classList.add("is-open"); // is-open 클래스 추가
   },
-  close: function (selector) { 
+  close: function (selector) {
     const modal = this.get(selector);
-    modal.classList.add('is-close'); // is-close 클래스 추가
+    modal.classList.add("is-close"); // is-close 클래스 추가
 
-    modal.querySelector(".container").addEventListener('animationend', function() {
-      modal.classList.remove('is-open', 'is-close'); // is-open, is-close 클래스 제거
-    }, { once: true });
-  }
+    modal.querySelector(".container").addEventListener(
+      "animationend",
+      function () {
+        modal.classList.remove("is-open", "is-close"); // is-open, is-close 클래스 제거
+      },
+      { once: true }
+    );
+  },
 };
 
 /**
@@ -127,19 +135,19 @@ function initSwiper() {
     let startX;
     let startY;
     let isHorizontalSwipe = false; // 수평 스와이프 감지 플래그
-  
-    swiper.addEventListener('touchstart', function(e) {
+
+    swiper.addEventListener("touchstart", function (e) {
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
       isHorizontalSwipe = false; // 초기화
     });
-  
-    swiper.addEventListener('touchmove', function(e) {
+
+    swiper.addEventListener("touchmove", function (e) {
       const touchX = e.touches[0].clientX;
       const touchY = e.touches[0].clientY;
       const differenceX = touchX - startX;
       const differenceY = touchY - startY;
-  
+
       // 첫 움직임에서 수평 스와이프 여부를 감지
       if (!isHorizontalSwipe) {
         if (Math.abs(differenceX) > Math.abs(differenceY)) {
@@ -152,50 +160,54 @@ function initSwiper() {
       // 수평 스와이프가 감지되면 스크롤 방지
       e.preventDefault();
 
-      if (differenceX < -50) { // 왼쪽으로 스와이프
+      if (differenceX < -50) {
+        // 왼쪽으로 스와이프
         // 모든 swipe-box에서 swiped 클래스를 제거
-        swiperList.forEach(box => {
+        swiperList.forEach((box) => {
           if (box !== swiper) {
-              box.classList.remove('swiped');
+            box.classList.remove("swiped");
           }
         });
-        swiper.classList.add('swiped');
-      } else if (differenceX > 50) { // 오른쪽으로 스와이프
-        swiper.classList.remove('swiped');
+        swiper.classList.add("swiped");
+      } else if (differenceX > 50) {
+        // 오른쪽으로 스와이프
+        swiper.classList.remove("swiped");
       }
     });
-  
+
     // 마우스 이벤트 추가 (데스크탑 지원)
     let isDragging = false;
-  
-    swiper.addEventListener('mousedown', function(e) {
+
+    swiper.addEventListener("mousedown", function (e) {
       startX = e.clientX;
       isDragging = true;
     });
-  
-    swiper.addEventListener('mousemove', function(e) {
+
+    swiper.addEventListener("mousemove", function (e) {
       if (!isDragging) return;
-  
+
       const difference = e.clientX - startX;
-  
-      if (difference < -50) { // 왼쪽으로 드래그
+
+      if (difference < -50) {
+        // 왼쪽으로 드래그
         // 모든 swipe-box에서 swiped 클래스를 제거
-        swiperList.forEach(box => {
+        swiperList.forEach((box) => {
           if (box !== swiper) {
-              box.classList.remove('swiped');
+            box.classList.remove("swiped");
           }
         });
-        swiper.classList.add('swiped');
-      } else if (difference > 50) { // 오른쪽으로 드래그
-        swiper.classList.remove('swiped');
+        swiper.classList.add("swiped");
+      } else if (difference > 50) {
+        // 오른쪽으로 드래그
+        swiper.classList.remove("swiped");
       }
     });
-  
-    swiper.addEventListener('mouseup', function() {
+
+    swiper.addEventListener("mouseup", function () {
       isDragging = false;
     });
-  
-    swiper.addEventListener('mouseleave', function() {
+
+    swiper.addEventListener("mouseleave", function () {
       isDragging = false;
     });
   });
@@ -207,11 +219,15 @@ function initSwiper() {
 function setDblTouch() {
   let lastTouchEnd = 0;
 
-  document.addEventListener('touchend', function(event) {
-      const now = (new Date()).getTime();
+  document.addEventListener(
+    "touchend",
+    function (event) {
+      const now = new Date().getTime();
       if (now - lastTouchEnd <= 300) {
-          event.preventDefault();
+        event.preventDefault();
       }
       lastTouchEnd = now;
-  }, { passive: false });
+    },
+    { passive: false }
+  );
 }

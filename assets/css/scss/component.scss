@@ -538,6 +538,8 @@ div.aside {
 
 ul.accordion-list {
   > li {
+    border-bottom: 1px solid var(--basic_d);
+
     > h3 {
       width: 100%;
 
@@ -573,7 +575,8 @@ ul.accordion-list {
     > div {
       max-height: 0;
       overflow: auto;
-      transition: max-height 0.3s;
+      padding: 0;
+      transition: max-height 0.3s ease, padding 0.3s ease;
     }
 
     &.is-active {
@@ -587,6 +590,8 @@ ul.accordion-list {
 
       > div {
         max-height: 1000px;
+        padding: 14px 0 10px;
+        border-top: 1px dashed var(--basic_d);
       }
     }
   }

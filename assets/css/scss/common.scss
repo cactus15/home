@@ -352,8 +352,24 @@ button.v-all-btn {
       position: absolute;
       top: -40px;
       left: 10px;
-      background: url(../images/character.svg) no-repeat;
+      background: url(../images/character_1x.png) no-repeat;
       background-size: cover;
+    }
+
+    /* 2x 해상도 */
+    @media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+      &:before {
+        background: url(../images/character_2x.png) no-repeat center top;
+        background-size: cover;
+      }
+    }
+
+    /* 3x 해상도 */
+    @media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
+      &:before {
+        background: url(../images/character_3x.png) no-repeat center top;
+        background-size: cover;
+      }
     }
 
     > .ac {
@@ -641,8 +657,24 @@ button.v-all-btn {
       position: absolute;
       top: -40px;
       left: 10px;
-      background: url(../images/character.svg) no-repeat;
+      background: url(../images/character_1x.png) no-repeat;
       background-size: cover;
+    }
+
+    /* 2x 해상도 */
+    @media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+      &:before {
+        background: url(../images/character_2x.png) no-repeat center top;
+        background-size: cover;
+      }
+    }
+
+    /* 3x 해상도 */
+    @media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
+      &:before {
+        background: url(../images/character_3x.png) no-repeat center top;
+        background-size: cover;
+      }
     }
 
     &:after {

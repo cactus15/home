@@ -576,7 +576,7 @@ ul.accordion-list {
       max-height: 0;
       overflow: auto;
       padding: 0;
-      transition: max-height 0.3s ease, padding 0.3s ease;
+      transition: max-height 0.3s, padding 0.3s;
     }
 
     &.is-active {

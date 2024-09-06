@@ -240,7 +240,7 @@ button.v-all-btn {
   > div {
     display: none;
     height: 100%;
-    padding: 20px 20px 40px;
+    padding: 0 20px 20px;
     overflow: auto;
 
     &.active {
@@ -342,19 +342,18 @@ button.v-all-btn {
     height: auto;
     box-shadow: -2px 6px 12px 0px rgba(203, 196, 221, 0.36);
     border-radius: 4px 20px 20px 20px;
-    margin: 59px 0 0;
     position: relative;
 
     &:before {
       content: "";
       display: block;
-      width: 35px;
-      height: 39px;
+      width: 37px;
+      height: 40px;
       position: absolute;
-      top: -39px;
-      left: 11px;
+      top: -40px;
+      left: 10px;
       background: url(../images/character.svg) no-repeat;
-      background-size: 35.1px 45.5px;
+      background-size: cover;
     }
 
     > .ac {
@@ -510,9 +509,7 @@ button.v-all-btn {
             }
           }
         }
-      }
 
-      &.is-active {
         > div.ac-panel {
           height: 353px;
         }
@@ -639,13 +636,13 @@ button.v-all-btn {
     }
 
     &:before {
-      width: 35px;
-      height: 39px;
+      width: 37px;
+      height: 40px;
       position: absolute;
-      top: -39px;
-      left: 11px;
+      top: -40px;
+      left: 10px;
       background: url(../images/character.svg) no-repeat;
-      background-size: 35px 45px;
+      background-size: cover;
     }
 
     &:after {

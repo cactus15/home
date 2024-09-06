@@ -44,7 +44,7 @@
 
       <!-- tab type s -->
       <h2 class="text-16 font-bold mb-10">TAB type-1</h2>
-      <div class="border-2 border-dashed border-purple-500 rounded-lg p-10">
+      <div class="border-2 border-dashed border-purple-500 rounded-lg p-5">
         <div class="tabs type-1 h-36">
           <div class="tab key">키워드 추출</div>
           <div class="tab cont">내용 요약</div>
@@ -103,7 +103,7 @@
       <!-- chat UI s -->
       <h2 class="text-16 font-bold mb-10 mt-40">chat UI</h2>
       <div class="chat border-2 border-dashed border-purple-500 rounded-lg p-10">
-        <div class="accordion-container">
+        <div class="accordion-container mt-40">
           <div class="ac is-active">
             <h2 class="ac-header">
               <button type="button" class="ac-trigger" onclick="this.closest('.ac').classList.toggle('is-active');">당행 지식 답변입니다.</button>
@@ -149,7 +149,7 @@
 
         <!-- 당행지식 내용 없을때 -->
         <!-- empty class 추가 -->
-        <div class="accordion-container">
+        <div class="accordion-container mt-60">
           <div class="ac is-active empty">
             <h2 class="ac-header">
               <button type="button" class="ac-trigger" onclick="this.closest('.ac').classList.toggle('is-active');">당행 지식 답변입니다.</button>
@@ -166,16 +166,16 @@
       <div class="chat border-2 border-dashed border-purple-500 rounded-lg p-10">
         <h3>1줄 케이스 / 34byte</h3>
         <div class="line">
-          <div class="msg-me mb-20">가나다라마바사아자차카타파하가나다</div>
+          <div class="msg-me">가나다라마바사아자차카타파하가나다</div>
         </div>
 
-        <h3>2줄 이상 케이스/ 69byte</h3>
+        <h3 class="mt-20">2줄 이상 케이스/ 69byte</h3>
         <div class="line">
-          <div class="msg-me mb-20">가나다라마바사아자차카타파하가나가다라가나다라마바사아자차카타파하가</div>
+          <div class="msg-me">가나다라마바사아자차카타파하가나가다라가나다라마바사아자차카타파하가</div>
         </div>
 
-        <h3 class="mb-50">챗봇 메세지</h3>
-        <div class="msg-chat">
+        <h3 class="mt-20">챗봇 메세지</h3>
+        <div class="msg-chat mt-40">
           <div class="dot"></div>
         </div>
       </div>

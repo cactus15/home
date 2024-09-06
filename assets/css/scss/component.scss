@@ -143,11 +143,27 @@ div.main {
           line-height: 36px;
           text-align: center;
           font-size: 24px;
-          background: url(../images/img_profile_main.svg) no-repeat center top;
+          background: url(../images/img_profile_main_1x.png) no-repeat center top; /* 기본 1x 해상도 */
           background-size: 130px;
 
           strong {
             font-weight: 800;
+          }
+        }
+
+        /* 2x 해상도 */
+        @media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+          header {
+            background: url(../images/img_profile_main_2x.png) no-repeat center top;
+            background-size: 130px;
+          }
+        }
+
+        /* 3x 해상도 */
+        @media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
+          header {
+            background: url(../images/img_profile_main_3x.png) no-repeat center top;
+            background-size: 130px;
           }
         }
 
@@ -517,5 +533,61 @@ div.aside {
   }
   100% {
     background-color: transparent;
+  }
+}
+
+ul.accordion-list {
+  > li {
+    > h3 {
+      width: 100%;
+
+      > button {
+        position: relative;
+        line-height: 22px;
+        padding: 20px 0;
+        position: relative;
+        display: block;
+        text-align: left;
+        width: 100%;
+        color: var(--black) !important;
+        font-size: 14px;
+        font-weight: 800;
+        border: none;
+        outline: none;
+
+        &:after {
+          content: "";
+          display: block;
+          width: 18px;
+          height: 18px;
+          background: url(../images/icon_arrow_down_2.svg) no-repeat;
+          position: absolute;
+          top: 50%;
+          right: 6px;
+          transform: translateY(-50%);
+          transition: all 0.3s;
+        }
+      }
+    }
+
+    > div {
+      max-height: 0;
+      overflow: auto;
+      transition: max-height 0.3s;
+    }
+
+    &.is-active {
+      > h3 {
+        > button {
+          &:after {
+            background: url(../images/icon_arrow_up_2.svg) no-repeat;
+          }
+        }
+      }
+
+      > div {
+        max-height: 1000px;
+      }
+    }
   }
 }

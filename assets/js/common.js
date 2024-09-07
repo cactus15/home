@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-  initHeight();
+  //initHeight();
 
   if (document.querySelector("div.aside div.list")) setScroll(); // 서브 메뉴 있을때만 실행
 
@@ -14,8 +14,13 @@ function initHeight() {
   setHeight();
 
   let target = window.visualViewport ? window.visualViewport : window;
-  
+
   target.addEventListener("resize", function (event) {
+    setHeight();
+  });
+
+  document.querySelectorAll("input").addEventListener("focus", function (event) {
+    console.dir(event);
     setHeight();
   });
 }

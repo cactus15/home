@@ -541,7 +541,7 @@ ul.accordion-list {
     border-bottom: 1px solid var(--basic_d);
     max-height: 62px;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.1s ease;
 
     > h3 {
       width: 100%;
@@ -580,7 +580,7 @@ ul.accordion-list {
     }
 
     &.is-active {
-      transition: max-height 1s ease;
+      transition: max-height 0.3s ease;
       max-height: 2000px;
 
       > h3 {

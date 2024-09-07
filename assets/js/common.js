@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   initSwiper();
 
   setDblTouch();
-
-  setKeypad();
 });
 
 function initHeight() {

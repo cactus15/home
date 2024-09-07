@@ -1073,3 +1073,11 @@ html {
     }
   }
 }
+
+.table-wrap-01 {
+  overflow-x: auto;
+
+  > table {
+    min-width: 1000px;
+  }
+}

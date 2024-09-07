@@ -1814,6 +1814,13 @@ html body.swal2-height-auto div.swal2-container button.swal2-styled.swal2-cancel
   border-radius: 8px;
 }
 
+.table-wrap-01 {
+  overflow-x: auto;
+}
+.table-wrap-01 > table {
+  min-width: 1000px;
+}
+
 /*
   component
 */

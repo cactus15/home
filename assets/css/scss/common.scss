@@ -118,9 +118,15 @@ button.v-all-btn {
 
   &:disabled {
     background-color: var(--white);
-    border: 1px solid var(--basic_c);
-    color: var(--basic_c);
+    border: 1px solid var(--basic_e);
+    color: var(--basic_d);
     cursor: not-allowed;
+    font-size: 13px;
+    font-weight: 600;
+
+    &:before {
+      background: url(../images/icon_plus_3.svg) no-repeat;
+    }
   }
 }
 
@@ -240,7 +246,9 @@ button.v-all-btn {
   > div {
     display: none;
     height: 100%;
-    padding: 0 20px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
     overflow: auto;
 
     &.active {
@@ -319,11 +327,6 @@ button.v-all-btn {
     }
   }
 
-  .accordion-container + .line,
-  .msg-chat + .line {
-    margin-top: 20px;
-  }
-
   div.line {
     overflow: hidden;
     display: flex;
@@ -334,10 +337,6 @@ button.v-all-btn {
   /**
   * 채팅 ui
   */
-  .line + .accordion-container {
-    margin-top: 59px;
-  }
-
   .accordion-container {
     height: auto;
     box-shadow: -2px 6px 12px 0px rgba(203, 196, 221, 0.36);
@@ -595,6 +594,10 @@ button.v-all-btn {
       border-top: 1px solid var(--basic_e6);
       border-radius: 0 0 20px 20px;
 
+      &:first-child {
+        border-radius: 4px 20px 20px 20px;
+      }
+
       &:after {
         content: "";
         display: block;
@@ -606,6 +609,12 @@ button.v-all-btn {
         right: 20px;
         transform: translateY(-50%);
       }
+    }
+
+    > .loading {
+      background: var(--white);
+      border-radius: 4px 20px 20px 20px;
+      padding: 21px 25px 21px 21px;
     }
   }
 

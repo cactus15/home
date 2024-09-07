@@ -373,13 +373,13 @@ div.aside {
 
             &.pc {
               &:before {
-                background: url(../images/icon_pc.svg) center center no-repeat var(--basic_ee);
+                background: url(../images/icon_pc.svg) center center no-repeat var(--basic_e);
               }
             }
 
             &.mobile {
               &:before {
-                background: url(../images/icon_mobile.svg) center center no-repeat var(--basic_ee);
+                background: url(../images/icon_mobile.svg) center center no-repeat var(--basic_e);
               }
             }
 
@@ -539,6 +539,9 @@ div.aside {
 ul.accordion-list {
   > li {
     border-bottom: 1px solid var(--basic_d);
+    max-height: 62px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
 
     > h3 {
       width: 100%;
@@ -567,19 +570,19 @@ ul.accordion-list {
           top: 50%;
           right: 6px;
           transform: translateY(-50%);
-          transition: all 0.3s;
         }
       }
     }
 
     > div {
-      max-height: 0;
-      overflow: auto;
-      padding: 0;
-      transition: max-height 0.3s, padding 0.3s;
+      padding: 14px 0 30px;
+      border-top: 1px dashed var(--basic_d);
     }
 
     &.is-active {
+      transition: max-height 1s ease;
+      max-height: 2000px;
+
       > h3 {
         > button {
           &:after {
@@ -587,12 +590,70 @@ ul.accordion-list {
           }
         }
       }
+    }
+  }
+}
 
-      > div {
-        max-height: 1000px;
-        padding: 14px 0 10px;
-        border-top: 1px dashed var(--basic_d);
-      }
+
+.loading {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+
+  &:after {
+    content: "";
+    display: block;
+  }
+
+  &:after {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #4911a7;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation-delay: 0s;
+  }
+
+  > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    width: 24px;
+    height: 10px;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    }
+
+    &:before {
+      background-color: #a980ec;
+      animation-delay: -0.32s;
+    }
+
+    &:after {
+      background-color: #7b45d3;
+      animation-delay: -0.16s;
+    }
+  }
+
+  @keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
     }
   }
 }

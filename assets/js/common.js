@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-  setHeight();
+  initHeight();
 
   if (document.querySelector("div.aside div.list")) setScroll(); // 서브 메뉴 있을때만 실행
 
@@ -10,9 +10,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
   setDblTouch();
 });
 
-window.addEventListener("resize", function (event) {
+function initHeight() {
   setHeight();
-});
+
+  let target = window.visualViewport ? window.visualViewport : window;
+  
+  target.addEventListener("resize", function (event) {
+    setHeight();
+  });
+}
 
 /**
  * 모바일 높이 조정

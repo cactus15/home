@@ -8,16 +8,43 @@ document.addEventListener("DOMContentLoaded", function (event) {
   initSwiper();
 
   setDblTouch();
+
+  setKeypad();
 });
 
 function initHeight() {
-  setHeight();
+  window.addEventListener('resize', setHeight);
+  window.addEventListener('orientationchange', setHeight);
+  document.addEventListener('focusin', function (e) {
+    setKeypad(e);
+  });  // 페이지가 로드될 때 실행
 
-  let target = window.visualViewport ? window.visualViewport : window;
+  setHeight();  // 페이지가 로드될 때 실행
+}
 
-  target.addEventListener("resize", function (event) {
-    setHeight();
-  });
+/**
+ * 입력 키패드 제어
+ */
+function setKeypad(e) {
+  if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
+    // 입력 필드 외부를 클릭했을 때 포커스를 해제하는 함수
+    window.addEventListener('touchstart', function (event) {
+      // 클릭한 곳이 버튼이나 링크일 경우 포커스를 해제하지 않음
+      if (event.target.closest('button') || 
+          event.target.closest('a')) {
+        return; // 버튼이나 링크 클릭 시 포커스 해제를 막음
+      }
+
+      // 현재 포커스된 요소를 가져옵니다.
+      const activeElement = document.activeElement;
+
+      // 클릭한 곳이 입력 필드(input 또는 textarea)가 아니고,
+      // 현재 포커스된 요소가 입력 필드인 경우 포커스를 해제합니다.
+      if (activeElement && (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') && !activeElement.contains(event.target)) {
+        activeElement.blur();
+      }
+    }, { once: true });
+  }
 }
 
 /**

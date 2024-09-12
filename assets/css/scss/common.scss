@@ -57,9 +57,14 @@ body {
   --purple_c3: #c3c5ef;
 
   --pink: #dd06e1;
+  --pink_h:#FEE6FF;
   --green: #049898;
+  --green_h:#E2FDFD;
   --orange: #ff6b00;
+  --orange_h:#FEF1E9;
   --blue: #03b5d2;
+
+
 }
 
 /**
@@ -145,7 +150,7 @@ button.v-all-btn {
     gap: 6px;
 
     .tab {
-      padding: 8px 14px 8px 30px;
+      padding: 7px 13px 7px 29px;
       border: 1px solid #ddd;
       border-radius: 1000px;
       background-color: var(--white);
@@ -179,6 +184,68 @@ button.v-all-btn {
 
         &.active {
           background: white url("../images/icon_add_s.svg") no-repeat 14px center;
+        }
+      }
+    }
+
+    & + .tab-content {
+      height: auto;
+
+      > div {
+        max-height: 48px;
+        padding: 0;
+        overflow: hidden;
+
+        > h4 {
+          > button {
+            width: 100%;
+            height: 48px;
+            padding: 14px 0;
+            line-height: 20px;
+            color: var(--balck);
+            font-size: 15px;
+            font-weight: 800;
+            text-align: left;
+            background: url(../images/icon_plus.svg) no-repeat calc(100% - 6px) center;
+            background-size: 18px;
+          }
+        }
+
+        > div {
+          background: rgba(222, 225, 255, 0.3);
+          padding: 18px;
+          border-radius: 4px;
+
+          > a {
+            color: var(--purple_p);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 26px;
+            text-decoration-line: underline;
+            padding: 5px 0;
+            display: -webkit-box;
+            white-space: wrap;
+            word-break: break-all;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+
+            & + a {
+              margin-top: 8px;
+            }
+          }
+        }
+
+        &.is-active {
+          max-height: 1000px;
+
+          > h4 {
+            > button {
+              background: url(../images/icon_minus.svg) no-repeat calc(100% - 6px) center;
+              background-size: 18px;
+            }
+          }
         }
       }
     }
@@ -1081,3 +1148,40 @@ html {
     min-width: 1000px;
   }
 }
+
+.pre-wrap {
+  white-space: pre-wrap;
+}
+
+.notice {
+  color: var(--basic_08);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.highlight-f {
+  display: inline;
+  position: relative;
+  font-weight: 600;
+  color: var(--green);
+  background-color: var(--green_h);
+  }
+
+.highlight-b {
+  display: inline;
+  position: relative;
+  font-weight: 600;
+  color: var(--pink);
+  background-color: var(--pink_h);
+  }
+
+.highlight-r {
+  display: inline;
+  position: relative;
+  font-weight: 600;
+  color: var(--orange);
+  background-color: var(--orange_h);
+}
+
+

@@ -539,7 +539,7 @@ div.aside {
 ul.accordion-list {
   > li {
     border-bottom: 1px solid var(--basic_d);
-    max-height: 62px;
+    max-height: 84px;
     overflow: hidden;
     transition: max-height 0.1s ease;
 
@@ -549,16 +549,24 @@ ul.accordion-list {
       > button {
         position: relative;
         line-height: 22px;
-        padding: 20px 0;
+        margin: 20px 0;
+        padding: 0 35px 0 0;
         position: relative;
-        display: block;
         text-align: left;
         width: 100%;
+        max-height: 85px;
         color: var(--black) !important;
         font-size: 14px;
         font-weight: 800;
         border: none;
         outline: none;
+        overflow: hidden;
+        display: -webkit-box;
+        white-space: wrap;
+        word-break: break-all;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
 
         &:after {
           content: "";
@@ -575,6 +583,7 @@ ul.accordion-list {
     }
 
     > div {
+      display: none;
       padding: 14px 0 30px;
       border-top: 1px dashed var(--basic_d);
     }
@@ -590,10 +599,13 @@ ul.accordion-list {
           }
         }
       }
+
+      > div {
+        display: block;
+      }
     }
   }
 }
-
 
 .loading {
   position: relative;

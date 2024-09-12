@@ -539,10 +539,8 @@ div.aside {
 ul.accordion-list {
   > li {
     border-bottom: 1px solid var(--basic_d);
-    max-height: 84px;
     overflow: hidden;
-    transition: max-height 0.1s ease;
-
+    
     > h3 {
       width: 100%;
 
@@ -583,15 +581,20 @@ ul.accordion-list {
     }
 
     > div {
-      display: none;
-      padding: 14px 0 30px;
-      border-top: 1px dashed var(--basic_d);
+      max-height: 0;
+      transition: max-height 0.1s ease;
+
+      > *:first-child {
+        padding-top: 14px;
+        border-top: 1px dashed var(--basic_d);
+      }
+
+      > *:last-child {
+        padding-bottom: 30px;
+      }
     }
 
     &.is-active {
-      transition: max-height 0.3s ease;
-      max-height: 2000px;
-
       > h3 {
         > button {
           &:after {
@@ -601,7 +604,8 @@ ul.accordion-list {
       }
 
       > div {
-        display: block;
+        transition: max-height 0.3s ease;
+        max-height: 2000px;
       }
     }
   }

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+
+    <link rel="preload" href="../assets/fonts/Pretendard-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/Pretendard-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/Pretendard-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/Pretendard-Medium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/Pretendard-Regular.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="stylesheet" type="text/css" href="../assets/js/lib/overlayscrollbars/overlayscrollbars.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/js/lib/toastify/toastify.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/js/lib/sweetalert2/sweetalert2.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/global.min.css" />
+
+    <script type="text/javascript" src="../assets/js/lib/overlayscrollbars/overlayscrollbars.browser.es6.min.js" defer></script>
+    <script type="text/javascript" src="../assets/js/lib/toastify/toastify-js.js"></script>
+    <script type="text/javascript" src="../assets/js/lib/sweetalert2/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="../assets/js/lib/lottie/lottie.min.js"></script>
+    <script type="text/javascript" src="../assets/js/common.js"></script>
+
+    <title>Chat Bot</title>
+  </head>
+  <body>
+    <div id="root">
+      <div class="main">
+        <!-- header s -->
+        <header class="top-bar">
+          <button type="button" class="history-btn" onclick="modal.show('div.aside');">이력보기</button>
+          <h1>지식 챗봇</h1>
+          <button type="button" class="close-btn" onclick="Swal.fire({title: '지식챗봇을 종료할까요?', text: '인사시스템 첫 화면으로 돌아갑니다.', confirmButtonText: '네', cancelButtonText:'아니오', showCancelButton: true});">닫기</button>
+        </header>
+
+        <!-- header e -->
+
+        <!-- content s -->
+        <div class="content" id="main-content">
+          <div class="chat">
+            <div class="mt-20">
+              <div class="line">
+                <div class="msg-me">가나다라마바사아자차카타파하가나가다라가나다라마바사아자차카타파하가</div>
+              </div>
+            </div>
+
+            <div class="accordion-container mt-60">
+              <div class="ac is-active">
+                <h2 class="ac-header">
+                  <button type="button" class="ac-trigger" onclick="this.closest('.ac').classList.toggle('is-active');">당행 지식 답변입니다.</button>
+                </h2>
+                <div class="ac-panel">
+                  <div class="ac-text">
+                    <section class="faq">
+                      <h3>FAQ</h3>
+                      <div>
+                        <ul>
+                          <li><b>Q1.</b> 휴가 신청은 어떻게 진행되나요? 연차, 병가, 특별휴가 등 여러가지가지가지가지</li>
+                          <li><b>Q1.</b> 휴가 신청은 어떻게 진행되나요? 연차, 병가, 특별휴가 등 여러가지가지가지가지</li>
+                          <li><b>Q1.</b> 휴가 신청은 어떻게 진행되나요? 연차, 병가, 특별휴가 등 여러가지가지가지가지</li>
+                        </ul>
+                      </div>
+                      <button class="v-all-btn" onclick="modal.show('#knowledgeModal', 1);">전체보기</button>
+                    </section>
+                    <section class="basic">
+                      <h3>기본지식</h3>
+                      <div>
+                        회사 인사시스템에서 근태신청을 하는 방법에 대해 자세히 안내드립니다. 먼저, 휴가 신청을 위해 인사시스템에 로그인한 후 휴가 신청 메뉴를 선택합니다. 이 메뉴에서 휴가 종류(연차, 병가, 특별휴가 등)를 선택하고, 휴가 시작일과 종료일을 입력한 뒤 휴가 회사 인사시스템에서 근태신청을 하는 방법에 대해 자세히 안내드립니다. 먼저, 휴가 신청을 위해 인사시스템에 로그인한 후 휴가 신청 메뉴를
+                        선택합니다. 이 메뉴에서 휴가 종류(연차, 병가, 특별휴가 등)를 선택하고, 휴가 시작일과 종료일을 입력한 뒤 휴가
+                      </div>
+                      <button class="v-all-btn" onclick="modal.show('#knowledgeModal', 2);">전체보기</button>
+                    </section>
+                    <section class="rule">
+                      <h3>규정더보기</h3>
+                      <div>
+                        <ul>
+                          <li><b>Q1.</b> 휴가 신청은 어떻게 진행되나요? 연차, 병가, 특별휴가 등 여러가지가지가지가지</li>
+                          <li><b>Q1.</b> 휴가 신청은 어떻게 진행되나요? 연차, 병가, 특별휴가 등 여러가지가지가지가지</li>
+                          <li><b>Q1.</b> 휴가 신청은 어떻게 진행되나요? 연차, 병가, 특별휴가 등 여러가지가지가지가지</li>
+                        </ul>
+                      </div>
+                      <button class="v-all-btn" onclick="modal.show('#knowledgeModal', 3);">전체보기</button>
+                    </section>
+                  </div>
+                  <p>* 링크, 이미지, 도표는 PC 지식챗봇에서 확인하세요.</p>
+                </div>
+              </div>
+              <button type="button" onclick="modal.show('#hgptModal');">H-GPT 답변입니다.</button>
+            </div>
+
+            <div class="mt-20">
+              <div class="line">
+                <div class="msg-me">학자금대출</div>
+              </div>
+            </div>
+
+            <!-- 당행지식 로딩중 -->
+            <div class="accordion-container mt-60">
+              <div class="ac is-active">
+                <h2 class="ac-header">
+                  <button type="button" class="ac-trigger" onclick="this.closest('.ac').classList.toggle('is-active');">당행 지식 답변입니다.</button>
+                </h2>
+                <div class="ac-panel">
+                  <div class="ac-text">
+                    <section class="faq">
+                      <h3>FAQ</h3>
+                      <div>
+                        <div class="loading">
+                          <div class="dot"></div>
+                        </div>
+                      </div>
+                      <button disabled class="v-all-btn" onclick="modal.show('#knowledgeModal', 1);">전체보기</button>
+                    </section>
+                    <section class="basic">
+                      <h3>기본지식</h3>
+                      <div>
+                        <div class="loading">
+                          <div class="dot"></div>
+                        </div>
+                      </div>
+                      <button disabled class="v-all-btn" onclick="modal.show('#knowledgeModal', 2);">전체보기</button>
+                    </section>
+                    <section class="rule">
+                      <h3>규정더보기</h3>
+                      <div>
+                        <div class="loading">
+                          <div class="dot"></div>
+                        </div>
+                      </div>
+                      <button disabled class="v-all-btn" onclick="modal.show('#knowledgeModal', 3);">전체보기</button>
+                    </section>
+                  </div>
+                  <p>* 링크, 이미지, 도표는 PC 지식챗봇에서 확인하세요.</p>
+                </div>
+              </div>
+              <button type="button" onclick="modal.show('#hgptModal');">H-GPT 답변입니다.</button>
+            </div>
+
+            <div class="mt-20">
+              <div class="line">
+                <div class="msg-me">학자금대출</div>
+              </div>
+            </div>
+
+            <!-- 당행지식 내용 없을때 -->
+            <!-- empty class 추가 -->
+            <div class="accordion-container mt-60">
+              <div class="ac is-active empty">
+                <h2 class="ac-header">
+                  <button type="button" class="ac-trigger" onclick="this.closest('.ac').classList.toggle('is-active');">당행 지식 답변입니다.</button>
+                </h2>
+                <div class="ac-panel"></div>
+              </div>
+              <button type="button" onclick="modal.show('#hgptModal');">H-GPT 답변입니다.</button>
+            </div>
+
+            <div class="mt-20">
+              <div class="line">
+                <div class="msg-me">학자금대출</div>
+              </div>
+            </div>
+
+            <!-- 당행지식 none -->
+            <div class="accordion-container mt-60">
+              <button type="button" onclick="modal.show('#hgptModal');">H-GPT 답변입니다.</button>
+            </div>
+
+            <div class="mt-20">
+              <div class="line">
+                <div class="msg-me">학자금대출</div>
+              </div>
+            </div>
+
+            <!-- 말풍선 로딩중 -->
+            <div class="accordion-container mt-60 w-[fit-content]">
+              <div class="loading">
+                <div class="dot"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-menu">
+            <button type="button" class="history-btn">내 이력 보기</button>
+          </div>
+        </div>
+        <!-- content e -->
+
+        <!-- prompt s -->
+        <div class="prompt">
+  <button type="button" class="home-btn">홈으로</button>
+  <div class="input-wrap">
+    <input type="text" placeholder="지식챗봇에게 물어보세요." oninput="this.nextElementSibling.disabled = !this.value;" />
+    <button type="button" class="send-btn" onclick="toastify('하나포탈로 전송되었습니다.');" disabled>입력</button>
+  </div>
+</div>
+
+        <!-- prompt e -->
+
+        <!-- aside s -->
+        <div class="aside modal">
+          <div class="container">
+            <header>
+              <button type="button" class="close-btn" onclick="modal.close(this);">닫기</button>
+
+              <h1>
+                <span>내 이력 보기</span>
+                <button>전체삭제</button>
+              </h1>
+            </header>
+
+            <!-- lnb swiper-list s -->
+            <div class="list swiper-list">
+              <dl>
+                <dt>2024.07.29</dt>
+                <dd>
+                  <div class="pc on">
+                    <div class="inner">
+                      <a href="#">근태신청</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                  <div class="mobile">
+                    <div class="inner">
+                      <a href="#">인사시스템</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                  <div class="pc">
+                    <div class="inner">
+                      <a href="#">텍스트 최대 케이스 최대케이스 최대 케이스 최대케이스</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                  <div class="mobile">
+                    <div class="inner">
+                      <a href="#">의료비지원</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                </dd>
+                <dt>2024.07.28</dt>
+                <dd>
+                  <div class="pc">
+                    <div class="inner">
+                      <a href="#">근태신청</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                  <div class="mobile">
+                    <div class="inner">
+                      <a href="#">인사시스템</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                  <div class="pc">
+                    <div class="inner">
+                      <a href="#">텍스트 최대 케이스 최대케이스 최대 케이스 최대케이스</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                  <div class="mobile">
+                    <div class="inner">
+                      <a href="#">의료비지원</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                </dd>
+                <dt>2024.07.27</dt>
+                <dd>
+                  <div class="pc">
+                    <div class="inner">
+                      <a href="#">근태신청</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                  <div class="mobile">
+                    <div class="inner">
+                      <a href="#">인사시스템</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                  <div class="pc">
+                    <div class="inner">
+                      <a href="#">텍스트 최대 케이스 최대케이스 최대 케이스 최대케이스</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                  <div class="mobile">
+                    <div class="inner">
+                      <a href="#">의료비지원</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                </dd>
+                <dt>2024.07.26</dt>
+                <dd>
+                  <div class="pc">
+                    <div class="inner">
+                      <a href="#">근태신청</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                  <div class="mobile">
+                    <div class="inner">
+                      <a href="#">인사시스템</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                  <div class="pc">
+                    <div class="inner">
+                      <a href="#">텍스트 최대 케이스 최대케이스 최대 케이스 최대케이스</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                  <div class="mobile">
+                    <div class="inner">
+                      <a href="#">의료비지원</a>
+                      <button type="button">삭제</button>
+                    </div>
+                  </div>
+                </dd>
+              </dl>
+            </div>
+            <!-- lnb swiper-list e -->
+            
+          </div>
+
+          <div class="dim" onclick="modal.close(this);"></div>
+        </div>
+        <!-- aside e -->
+
+        <!-- popup s -->
+        <div id="knowledgeModal" class="modal">
+          <div class="container">
+            <header class="header">
+              <h2 class="title">당행지식</h2>
+              <button class="close" onclick="modal.close(this);"></button>
+            </header>
+            <div class="content">
+              <h3>근태신청</h3>
+              <div>
+                <div class="tabs type-2 h-32">
+                  <div class="tab faq">FAQ</div>
+                  <div class="tab basic">기본지식</div>
+                  <div class="tab rule">규정더보기</div>
+                </div>
+
+                <div class="tab-content bg-white">
+                  <div>
+                    <ul class="accordion-list">
+                      <li class="is-active">
+                        <h3>
+                          <button type="button" onclick="this.closest('li').classList.toggle('is-active');">Q1. 인사시스템에서 근태신청 하는 방법 인사시스템에서 근태신청 하는 방법 인사시스템에서 근태신청 하는 방법 인사시스템에서 </button>
+                        </h3>
+                        <div>
+                          <div class="pre-wrap">회사 인사시스템에서 근태신청을 하는 방법에 대해 자세히 안내 드립니다. 먼저, 휴가 신청을 위해 인사시스템에 로그인한 후 휴가 신청 메뉴를 선택합니다. 이 메뉴에서 휴가 종류(연차, 병가, 특별휴가 등)를 선택하고, 휴가 시작일과 종료일을 입력한 뒤 휴가 사유를 구체적으로 작성합니다.작성이 완료되면 상급자에게 자동으로 승인 요청 알림이 발송되며, 상급자가 이를 검토한 후 승인여부를 결정합니다. 승인상태는 인사시스템에서 실시간으로 확인할 수 있습니다.</div>
+                          <p class="notice mt-14 mb-20">* 링크, 이미지, 도표는 PC 지식챗봇에서 확인하세요.</p>
+                          
+                          <!-- 탭 안에 탭 s -->
+                          <div class="tabs type-1 h-36 mt-10 mb-10">
+                            <div class="tab key">키워드 추출</div>
+                            <div class="tab cont">내용 요약</div>
+                            <div class="tab question">관련질문 추가</div>
+                          </div>
+                          <div class="tab-content">
+                            <div>
+                              <h4>
+                                <button type="button" onclick="this.closest('div').classList.toggle('is-active');">키워드 추출</button>
+                              </h4>
+                              <div>
+                                1. 휴가 신청 <br />
+                                2. 인사시스템 로그인 <br />
+                                3. 휴가 신청 메뉴 <br />
+                                4. 휴가 종류 <br />
+                                5. 연차
+                              </div>
+                            </div>
+                            <div>
+                              <h4>
+                                <button type="button" onclick="this.closest('div').classList.toggle('is-active');">내용 요약</button>
+                              </h4>
+                              <div>
+                                회사 인사시스템에서 근태 신청 방법 <br /><br />
+                                [ 휴가 신청 ] <br />
+                                1. 로그인: 인사시스템에 로그인 <br />
+                                2. 메뉴 선택: 휴가 신청 메뉴 선택 <br />
+                                3. 휴가 종류 선택: 연차, 병가, 특별휴가 등 선택 <br />
+                                4. 세부 내용 입력: 시작일, 종료일, 사유 입력 <br />
+                                5. 승인 요청: 자동으로 상급자에게 승인 요청 알림 발송 <br />
+                                6. 승인 여부 결정: 상급자가 검토 후 승인 여부 결정 <br />
+                                7. 확인: 승인 상태를 시스템에서 실시간 확인
+                              </div>
+                            </div>
+                            <div>
+                              <h4>
+                                <button type="button" onclick="this.closest('div').classList.toggle('is-active');">관련질문 추가</button>
+                              </h4>
+                              <div>
+                                <a href="#">근태신청은 휴가 신청 메뉴 선택</a>
+                                <a href="#">메뉴 선택: 휴가 신청 메뉴 선택</a>
+                                <a href="#">휴가 종류 선택: 연차, 병가, 특별휴가 등 선택</a>
+                                <a href="#">메뉴 선택: 휴가 신청 메뉴 선택</a>
+                                <a href="#">링크 최대 두줄 케이스 링크 두줄 최대 케이스 링크 두줄 최대 케이스 링크 두줄 최대 케이스 링크 두줄 최대링크 최대 두줄 케이스 링크 두줄 최대 케이스 링크 두줄 최대 케이스 링크 두줄 최대 케이스 링크 두줄 최대</a>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- 탭 안에 탭 e -->
+                        </div>
+                      </li>
+                      <li>
+                        <h3>
+                          <button type="button" onclick="this.closest('li').classList.toggle('is-active');">Q1. 인사시스템에서 근태신청 하는 방법</button>
+                        </h3>
+                        <div>
+                          <div class="pre-wrap">회사 인사시스템에서 근태신청을 하는 방법에 대해 자세히 안내 드립니다. 먼저, 휴가 신청을 위해 인사시스템에 로그인한 후 휴가 신청 메뉴를 선택합니다. 이 메뉴에서 휴가 종류(연차, 병가, 특별휴가 등)를 선택하고, 휴가 시작일과 종료일을 입력한 뒤 휴가 사유를 구체적으로 작성합니다.작성이 완료되면 상급자에게 자동으로 승인 요청 알림이 발송되며, 상급자가 이를 검토한 후 승인여부를 결정합니다. 승인상태는 인사시스템에서 실시간으로 확인할 수 있습니다.</div>
+                        </div>
+                      </li>
+                      <li>
+                        <h3>
+                          <button type="button" onclick="this.closest('li').classList.toggle('is-active');">Q1. 인사시스템에서 근태신청 하는 방법</button>
+                        </h3>
+                        <div>
+                          <div class="pre-wrap">회사 인사시스템에서 근태신청을 하는 방법에 대해 자세히 안내 드립니다. 먼저, 휴가 신청을 위해 인사시스템에 로그인한 후 휴가 신청 메뉴를 선택합니다. 이 메뉴에서 휴가 종류(연차, 병가, 특별휴가 등)를 선택하고, 휴가 시작일과 종료일을 입력한 뒤 휴가 사유를 구체적으로 작성합니다.작성이 완료되면 상급자에게 자동으로 승인 요청 알림이 발송되며, 상급자가 이를 검토한 후 승인여부를 결정합니다. 승인상태는 인사시스템에서 실시간으로 확인할 수 있습니다.</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="pt-20">
+                    <!-- table-wrap-01 추가 -->
+                    <h3 class="font-semibold pb-10">&bull; table 스크롤 예제</h3>
+                    <div class="table-wrap-01">
+                      <table border="1" cellpadding="0" style="border-collabse: collabse; border: none">
+                        <tbody>
+                          <tr>
+                            <td colspan="2" height="29" rowspan="1" style="border-bottom: solid 1pt #000; border-left: solid 1pt #000; border-right: solid 1pt #000; border-top: solid 1pt #000; background-color: #ffffcc; line-height: 25pt" width="246">
+                              <p level="0" ordinal style="text-align: center" type="none">
+                                <span style="0">서류명</span>
+                              </p>
+                            </td>
+                            <td colspan="2" height="29" rowspan="1" style="border-bottom: solid 1pt #000; border-left: solid 1pt #000; border-right: solid 1pt #000; border-top: solid 1pt #000; background-color: #ffffcc; line-height: 25pt" width="80"></td>
+                            <td colspan="2" height="29" rowspan="1" style="border-bottom: solid 1pt #000; border-left: solid 1pt #000; border-right: solid 1pt #000; border-top: solid 1pt #000; background-color: #ffffcc; line-height: 25pt" width="278"></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" height="29" rowspan="1" style="border-bottom: solid 1pt #000; border-left: solid 1pt #000; border-right: solid 1pt #000; border-top: solid 1pt #000; background-color: #ffffcc; line-height: 25pt" width="246"></td>
+                            <td colspan="2" height="29" rowspan="1" style="border-bottom: solid 1pt #000; border-left: solid 1pt #000; border-right: solid 1pt #000; border-top: solid 1pt #000; background-color: #ffffcc; line-height: 25pt" width="80"></td>
+                            <td colspan="2" height="29" rowspan="1" style="border-bottom: solid 1pt #000; border-left: solid 1pt #000; border-right: solid 1pt #000; border-top: solid 1pt #000; background-color: #ffffcc; line-height: 25pt" width="278"></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" height="29" rowspan="1" style="border-bottom: solid 1pt #000; border-left: solid 1pt #000; border-right: solid 1pt #000; border-top: solid 1pt #000; background-color: #ffffcc; line-height: 25pt" width="246"></td>
+                            <td colspan="2" height="29" rowspan="1" style="border-bottom: solid 1pt #000; border-left: solid 1pt #000; border-right: solid 1pt #000; border-top: solid 1pt #000; background-color: #ffffcc; line-height: 25pt" width="80"></td>
+                            <td colspan="2" height="29" rowspan="1" style="border-bottom: solid 1pt #000; border-left: solid 1pt #000; border-right: solid 1pt #000; border-top: solid 1pt #000; background-color: #ffffcc; line-height: 25pt" width="278"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="pre-wrap">회사 인사시스템에서 근태신청을 하는 방법에 대해 자세히 안내 드립니다. 먼저, 휴가 신청을 위해 인사시스템에 로그인한 후 휴가 신청 메뉴를 선택합니다. 이 메뉴에서 휴가 종류(연차, 병가, 특별휴가 등)를 선택하고, 휴가 시작일과 종료일을 입력한 뒤 휴가 사유를 구체적으로 작성합니다.작성이 완료되면 상급자에게 자동으로 승인 요청 알림이 발송되며, 상급자가 이를 검토한 후 승인여부를 결정합니다. 승인상태는 인사시스템에서 실시간으로 확인할 수 있습니다.</div>
+                  </div>
+                  <div>
+                    <ul class="accordion-list">
+                      <li>
+                        <h3>
+                          <button type="button" onclick="this.closest('li').classList.toggle('is-active');">Q1. 인사시스템에서 근태신청 하는 방법</button>
+                        </h3>
+                        <div>회사 인사시스템에서 근태신청을 하는 방법에 대해 자세히 안내 드립니다. 먼저, 휴가 신청을 위해 인사시스템에 로그인한 후 휴가 신청 메뉴를 선택합니다. 이 메뉴에서 휴가 종류(연차, 병가, 특별휴가 등)를 선택하고, 휴가 시작일과 종료일을 입력한 뒤 휴가 사유를 구체적으로 작성합니다.작성이 완료되면 상급자에게 자동으로 승인 요청 알림이 발송되며, 상급자가 이를 검토한 후 승인여부를 결정합니다. 승인상태는 인사시스템에서 실시간으로 확인할 수 있습니다.</div>
+                      </li>
+                      <li>
+                        <h3>
+                          <button type="button" onclick="this.closest('li').classList.toggle('is-active');">Q1. 인사시스템에서 근태신청 하는 방법</button>
+                        </h3>
+                        <div>회사 인사시스템에서 근태신청을 하는 방법에 대해 자세히 안내 드립니다. 먼저, 휴가 신청을 위해 인사시스템에 로그인한 후 휴가 신청 메뉴를 선택합니다. 이 메뉴에서 휴가 종류(연차, 병가, 특별휴가 등)를 선택하고, 휴가 시작일과 종료일을 입력한 뒤 휴가 사유를 구체적으로 작성합니다.작성이 완료되면 상급자에게 자동으로 승인 요청 알림이 발송되며, 상급자가 이를 검토한 후 승인여부를 결정합니다. 승인상태는 인사시스템에서 실시간으로 확인할 수 있습니다.</div>
+                      </li>
+                      <li>
+                        <h3>
+                          <button type="button" onclick="this.closest('li').classList.toggle('is-active');">Q1. 인사시스템에서 근태신청 하는 방법</button>
+                        </h3>
+                        <div>회사 인사시스템에서 근태신청을 하는 방법에 대해 자세히 안내 드립니다. 먼저, 휴가 신청을 위해 인사시스템에 로그인한 후 휴가 신청 메뉴를 선택합니다. 이 메뉴에서 휴가 종류(연차, 병가, 특별휴가 등)를 선택하고, 휴가 시작일과 종료일을 입력한 뒤 휴가 사유를 구체적으로 작성합니다.작성이 완료되면 상급자에게 자동으로 승인 요청 알림이 발송되며, 상급자가 이를 검토한 후 승인여부를 결정합니다. 승인상태는 인사시스템에서 실시간으로 확인할 수 있습니다.</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- popup e -->
+
+        <!-- popup s -->
+        <div id="hgptModal" class="modal hgpt">
+          <div class="container">
+            <header class="header">
+              <h2 class="title">H-GPT</h2>
+              <button type="button" class="close" onclick="modal.close(this);"></button>
+            </header>
+            <div class="content">
+              <h3>근태신청</h3>
+              <div class="chat">
+                <div class="hgpt-msg">
+                  회사 인사시스템에서 근태신청을 하는 방법에 대해 자세히 안내드립니다. 먼저, 휴가 신청을 위해 인사시스템에 로그인한 후 휴가 신청 메뉴를 선택합니다. 이 메뉴에서 휴가 종류(연차, 병가, 특별휴가 등)를 선택하고 휴가 시작일과 종료일을 입력한 뒤 휴가 사유를 구체적으로 작성합니다. 작성이 완료되면 상급자에게 자동으로 승인 요청 알림이 발송됨. 상급자가 이를 검토한 후 승인여부를 결정합니다.
+                </div>
+
+                <div class="line">
+                  <div class="msg-me">인사시스템</div>
+                </div>
+
+                <div class="hgpt-msg">
+                  회사 인사시스템에서 근태신청을 하는 방법에 대해 자세히 안내드립니다. 먼저, 휴가 신청을 위해 인사시스템에 로그인한 후 휴가 신청 메뉴를 선택합니다. 이 메뉴에서 휴가 종류(연차, 병가, 특별휴가 등)를 선택하고 휴가 시작일과 종료일을 입력한 뒤 휴가 사유를 구체적으로 작성합니다. 작성이 완료되면 상급자에게 자동으로 승인 요청 알림이 발송됨. 상급자가 이를 검토한 후 승인여부를 결정합니다.
+                </div>
+
+                <div class="line">
+                  <div class="msg-me">인사시스템</div>
+                </div>
+
+                <div class="hgpt-msg">이미지, 도표, 코드 Area<br />가로 고정, 세로 가변</div>
+
+                <div class="line">
+                  <div class="msg-me">최대케이스최대케이스최대케이스최대케이 최대케이스최대케이스최대케이스최대케이</div>
+                </div>
+
+                <div class="hgpt-chat">
+                  <div class="dot"></div>
+                </div>
+              </div>
+
+              <!-- prompt s -->
+              <div class="prompt">
+  <button type="button" class="home-btn">홈으로</button>
+  <div class="input-wrap">
+    <input type="text" placeholder="H-GPT에 물어보세요." oninput="this.nextElementSibling.disabled = !this.value;" />
+    <button type="button" class="send-btn" onclick="toastify('잠시만요! 답변을 입력중입니다.');" disabled>입력</button>
+  </div>
+</div>
+
+              <!-- prompt e -->
+            </div>
+          </div>
+        </div>
+        <!-- popup e -->
+      </div>
+    </div>
+  </body>
+</html>

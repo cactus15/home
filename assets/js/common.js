@@ -8,23 +8,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
   initSwiper();
 
   setDblTouch();
-
-  const input = document.querySelector(".prompt .input-wrap input[type='text']");
-   
-  // 포커스 및 블러 이벤트 설정
-  let height = 0;
-  input.addEventListener("focus", function () {
-    height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-    document.documentElement.style.height = "100vh";
-  });
-
-  input.addEventListener("blur", function () {
-    document.documentElement.style.height = `${height}px`;
-  });
 });
 
 function initHeight() {
   window.addEventListener("resize", setHeight);
+
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', setHeight);
+
   setHeight(); // 페이지가 로드될 때 실행
 }
 

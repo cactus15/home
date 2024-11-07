@@ -14,7 +14,7 @@ body {
   margin: 0 auto;
   position: relative;
 
-  > div {
+  >div {
     width: 100%;
     height: 100%;
     position: relative;
@@ -57,11 +57,11 @@ body {
   --purple_c3: #c3c5ef;
 
   --pink: #dd06e1;
-  --pink_h:#FEE6FF;
+  --pink_h: #FEE6FF;
   --green: #049898;
-  --green_h:#E2FDFD;
+  --green_h: #E2FDFD;
   --orange: #ff6b00;
-  --orange_h:#FEF1E9;
+  --orange_h: #FEF1E9;
   --blue: #03b5d2;
 
 
@@ -76,7 +76,7 @@ body {
   gap: 10px;
   padding: 20px;
 
-  > button {
+  >button {
     min-width: 125px;
     height: 42px;
     padding: 10px;
@@ -188,16 +188,16 @@ button.v-all-btn {
       }
     }
 
-    & + .tab-content {
+    &+.tab-content {
       height: auto;
 
-      > div {
+      >div {
         max-height: 48px;
         padding: 0;
         overflow: hidden;
 
-        > h4 {
-          > button {
+        >h4 {
+          >button {
             width: 100%;
             height: 48px;
             padding: 14px 0;
@@ -211,12 +211,12 @@ button.v-all-btn {
           }
         }
 
-        > div {
+        >div {
           background: rgba(222, 225, 255, 0.3);
           padding: 18px;
           border-radius: 4px;
 
-          > a {
+          >a {
             color: var(--purple_p);
             font-size: 14px;
             font-weight: 500;
@@ -231,7 +231,7 @@ button.v-all-btn {
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2;
 
-            & + a {
+            &+a {
               margin-top: 8px;
             }
           }
@@ -240,8 +240,8 @@ button.v-all-btn {
         &.is-active {
           max-height: 1000px;
 
-          > h4 {
-            > button {
+          >h4 {
+            >button {
               background: url(../images/icon_minus.svg) no-repeat calc(100% - 6px) center;
               background-size: 18px;
             }
@@ -310,7 +310,7 @@ button.v-all-btn {
   width: 100%;
   height: calc(100% - 32px);
 
-  > div {
+  >div {
     display: none;
     height: 100%;
     padding-left: 20px;
@@ -423,7 +423,8 @@ button.v-all-btn {
     }
 
     /* 2x 해상도 */
-    @media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    @media only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
       &:before {
         background: url(../images/character_2x.png) no-repeat center top;
         background-size: cover;
@@ -431,25 +432,26 @@ button.v-all-btn {
     }
 
     /* 3x 해상도 */
-    @media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
+    @media only screen and (min-resolution: 288dpi),
+    only screen and (min-resolution: 3dppx) {
       &:before {
         background: url(../images/character_3x.png) no-repeat center top;
         background-size: cover;
       }
     }
 
-    > .ac {
+    >.ac {
       margin: 0;
       width: 100%;
       border-radius: 4px 20px 0 0;
       background: #fff;
       border: 0;
 
-      > h2 {
+      >h2 {
         width: 100%;
         height: 60px;
 
-        > button {
+        >button {
           position: relative;
           line-height: 24px;
           padding: 18px 20px 18px 40px;
@@ -479,8 +481,8 @@ button.v-all-btn {
       }
 
       &:first-child {
-        > div {
-          > .ac-text {
+        >div {
+          >.ac-text {
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -491,7 +493,7 @@ button.v-all-btn {
             /**
             * 채팅 당행지식 리스트
             */
-            > section {
+            >section {
               min-width: 230px;
               max-width: 100%;
               flex: 1;
@@ -502,12 +504,12 @@ button.v-all-btn {
               background: var(--white);
               border-radius: 4px 20px 20px 20px;
 
-              > div {
+              >div {
                 margin: 14px 0;
                 height: 154px;
 
-                > ul {
-                  > li {
+                >ul {
+                  >li {
                     display: -webkit-box;
                     white-space: wrap;
                     word-break: break-all;
@@ -527,7 +529,7 @@ button.v-all-btn {
               &.basic {
                 border: 1px solid var(--pink);
 
-                > h3 {
+                >h3 {
                   color: var(--pink);
                   font-size: 14px;
                   font-weight: 800;
@@ -535,7 +537,7 @@ button.v-all-btn {
                   padding-bottom: 12px;
                 }
 
-                > div {
+                >div {
                   display: -webkit-box;
                   white-space: wrap;
                   word-break: break-all;
@@ -549,7 +551,7 @@ button.v-all-btn {
               &.faq {
                 border: 1px solid var(--green);
 
-                > h3 {
+                >h3 {
                   color: var(--green);
                   font-size: 14px;
                   font-weight: 800;
@@ -561,7 +563,7 @@ button.v-all-btn {
               &.rule {
                 border: 1px solid var(--orange);
 
-                > h3 {
+                >h3 {
                   color: var(--orange);
                   font-size: 14px;
                   font-weight: 800;
@@ -572,7 +574,7 @@ button.v-all-btn {
             }
           }
 
-          > p {
+          >p {
             padding: 10px 20px 14px;
             color: var(--basic_08);
             font-size: 12px;
@@ -584,27 +586,27 @@ button.v-all-btn {
       }
 
       &.is-active {
-        > h2 {
-          > button {
+        >h2 {
+          >button {
             &:after {
               background: url(../images/icon_arrow_up_2.svg) no-repeat;
             }
           }
         }
 
-        > div.ac-panel {
+        >div.ac-panel {
           height: 353px;
         }
       }
 
       &.empty {
         &.is-active {
-          > div.ac-panel {
+          >div.ac-panel {
             height: 101px;
           }
         }
 
-        > div.ac-panel {
+        >div.ac-panel {
           &:after {
             content: "등록된 당행지식이 없습니다.";
             display: block;
@@ -618,13 +620,13 @@ button.v-all-btn {
             text-align: center;
           }
 
-          > div {
+          >div {
             display: none;
           }
         }
       }
 
-      > .ac-panel {
+      >.ac-panel {
         height: 0;
         transition: height 0.3s;
         overflow: hidden;
@@ -632,7 +634,7 @@ button.v-all-btn {
         background: var(--basic_f5);
         transition-property: height, visibility;
 
-        > .ac-text {
+        >.ac-text {
           border-top: 1px dashed var(--purple_c3);
           padding: 18px 18px 0 18px;
           color: var(--basic_03);
@@ -645,7 +647,7 @@ button.v-all-btn {
       }
     }
 
-    > button {
+    >button {
       width: 100%;
       height: 64px;
       background: url(../images/icon_ac_2.svg) no-repeat 18px center var(--white);
@@ -678,7 +680,7 @@ button.v-all-btn {
       }
     }
 
-    > .loading {
+    >.loading {
       background: var(--white);
       border-radius: 4px 20px 20px 20px;
       padding: 21px 25px 21px 21px;
@@ -705,7 +707,7 @@ button.v-all-btn {
   /**
   * 챗봇 로딩상태
   */
-  .line + .msg-chat {
+  .line+.msg-chat {
     margin-top: 59px;
   }
 
@@ -738,7 +740,8 @@ button.v-all-btn {
     }
 
     /* 2x 해상도 */
-    @media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    @media only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
       &:before {
         background: url(../images/character_2x.png) no-repeat center top;
         background-size: cover;
@@ -746,7 +749,8 @@ button.v-all-btn {
     }
 
     /* 3x 해상도 */
-    @media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
+    @media only screen and (min-resolution: 288dpi),
+    only screen and (min-resolution: 3dppx) {
       &:before {
         background: url(../images/character_3x.png) no-repeat center top;
         background-size: cover;
@@ -762,7 +766,7 @@ button.v-all-btn {
       animation-delay: 0s;
     }
 
-    > div {
+    >div {
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -792,18 +796,20 @@ button.v-all-btn {
     }
 
     @keyframes sk-bouncedelay {
+
       0%,
       80%,
       100% {
         transform: scale(0);
       }
+
       40% {
         transform: scale(1);
       }
     }
   }
 
-  div + .hgpt-msg {
+  div+.hgpt-msg {
     margin-top: 30px;
   }
 
@@ -815,11 +821,11 @@ button.v-all-btn {
     background: url(../images/icon_hgpt.svg) no-repeat 0 top;
   }
 
-  .hgpt-msg + .line {
+  .hgpt-msg+.line {
     margin-top: 30px;
   }
 
-  .line + .hgpt-chat {
+  .line+.hgpt-chat {
     margin-top: 30px;
   }
 
@@ -858,7 +864,7 @@ button.v-all-btn {
       animation-delay: 0s;
     }
 
-    > div {
+    >div {
       display: block;
       width: 10px;
       height: 10px;
@@ -869,11 +875,13 @@ button.v-all-btn {
     }
 
     @keyframes sk-bouncedelay {
+
       0%,
       80%,
       100% {
         transform: scale(0);
       }
+
       40% {
         transform: scale(1);
       }
@@ -915,7 +923,7 @@ button.v-all-btn {
       animation-delay: 0.2s;
     }
 
-    > .container {
+    >.container {
       animation: slideUp 0.3s both;
     }
   }
@@ -925,7 +933,7 @@ button.v-all-btn {
       animation: fadeOut 0.2s both;
     }
 
-    > .container {
+    >.container {
       animation: slideDown 0.3s both;
     }
   }
@@ -949,7 +957,7 @@ button.v-all-btn {
     position: relative;
     margin-bottom: 12px;
 
-    > h2 {
+    >h2 {
       width: 100%;
       line-height: 60px;
       text-align: center;
@@ -958,7 +966,7 @@ button.v-all-btn {
       font-weight: 600;
     }
 
-    > .close {
+    >.close {
       position: absolute;
       right: 20px;
       top: 18px;
@@ -973,37 +981,51 @@ button.v-all-btn {
     height: calc(100% - 72px);
     background-color: #fff;
     overflow: unset !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
 
-    > h3 {
+    >h3 {
       width: 100%;
       color: var(--black);
       font-size: 20px;
       font-weight: 800;
       line-height: 28px;
-      padding: 0 20px 24px;
+      padding: 0 20px;
+      margin-bottom: 24px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      /* 표시할 줄 수 */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: 84px;
     }
 
-    > div {
+    >div {
       width: 100%;
-      height: calc(100% - 52px);
+      flex: 1;
+      overflow-y: auto;
     }
   }
 
   &.hgpt {
-    > .container {
-      > .content {
-        > h3 {
-          padding-bottom: 16px;
-          border-bottom: 1px solid var(--basic_ee);
+    >.container {
+      >.content {
+        >h3 {
+          margin-bottom: 16px;
         }
 
-        > div {
+        >div {
           &.chat {
+            border-top: 1px solid var(--basic_ee);
             height: calc(100% - 117px);
           }
 
           &.prompt {
             height: 72px;
+            flex: none;
           }
         }
       }
@@ -1014,6 +1036,7 @@ button.v-all-btn {
     0% {
       background-color: transparent;
     }
+
     100% {
       background-color: rgba(0, 0, 0, 0.5);
     }
@@ -1023,6 +1046,7 @@ button.v-all-btn {
     0% {
       background-color: rgba(0, 0, 0, 0.5);
     }
+
     100% {
       background-color: transparent;
     }
@@ -1032,6 +1056,7 @@ button.v-all-btn {
     0% {
       transform: translateY(100%);
     }
+
     100% {
       transform: translateY(0);
     }
@@ -1041,6 +1066,7 @@ button.v-all-btn {
     0% {
       transform: translateY(0);
     }
+
     100% {
       transform: translateY(100%);
     }
@@ -1060,7 +1086,7 @@ html {
           position: absolute;
 
           &.swal2-center {
-            > .swal2-popup {
+            >.swal2-popup {
               width: 300px;
               padding: 0;
               border-radius: 10px;
@@ -1144,7 +1170,7 @@ html {
 .table-wrap-01 {
   overflow-x: auto;
 
-  > table {
+  >table {
     min-width: 1000px;
   }
 }
@@ -1166,7 +1192,7 @@ html {
   font-weight: 600;
   color: var(--green);
   background-color: var(--green_h);
-  }
+}
 
 .highlight-b {
   display: inline;
@@ -1174,7 +1200,7 @@ html {
   font-weight: 600;
   color: var(--pink);
   background-color: var(--pink_h);
-  }
+}
 
 .highlight-r {
   display: inline;
@@ -1183,5 +1209,3 @@ html {
   color: var(--orange);
   background-color: var(--orange_h);
 }
-
-

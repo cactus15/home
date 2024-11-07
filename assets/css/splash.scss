@@ -1,0 +1,37 @@
+*,
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  letter-spacing: -.3px;
+  max-width: 750px;
+  min-width: 360px;
+  margin: 0 auto
+}
+
+body>div,
+html>div {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, .2) 100%), linear-gradient(339deg, #d9deff 5.88%, #ebe7ff 92.23%);
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.h-full {
+  height: 100%;
+}

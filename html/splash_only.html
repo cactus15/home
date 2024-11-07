@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+
+   <link rel="stylesheet" type="text/css" href="../assets/css/splash.min.css" />  
+
+   <script type="text/javascript" src="../assets/js/lib/lottie/lottie.min.js"></script>
+
+    <title>Chat Bot - Splash</title> 
+  </head>
+  <body>
+    <div id="root">
+      <div class="chatbot_splash p-10 h-full"></div>
+      <script>
+        // animation
+        lottie.loadAnimation({
+          container: document.querySelector(".chatbot_splash"), // the dom element that will contain the animation
+          renderer: "svg",
+          loop: true,
+          autoplay: true,
+          path: "../assets/js/lib/lottie/chatbot_splash.json", // the path to the animation json
+        });
+      </script>
+    </div>
+  </body>
+</html>

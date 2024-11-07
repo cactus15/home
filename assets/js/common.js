@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   setDblTouch();
 
-  const initHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
   // 모바일 높이 조정   
   if (window.visualViewport) {
     // 키보드가 올라왔을 때 동작하는 visualViewport resize 이벤트 설정
     window.visualViewport.addEventListener('resize', () => {
-      if (window.visualViewport.height < initHeight) {
+      if (window.visualViewport.height < height) {
         // 키패드가 올라온 상태일 때 스크롤 차단
         disableScroll();
       } else {

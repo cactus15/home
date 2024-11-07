@@ -8,12 +8,42 @@ document.addEventListener("DOMContentLoaded", function (event) {
   initSwiper();
 
   setDblTouch();
+
+  
 });
 
-function initHeight() {
-  window.addEventListener("resize", setHeight);
+let scrollPosition = 0;
 
-  if (window.visualViewport) window.visualViewport.addEventListener('resize', setHeight);
+// 스크롤 및 터치 움직임 차단
+function preventScroll(event) {
+    event.preventDefault();
+}
+
+// 키패드가 올라올 때 스크롤 차단 및 화면 고정
+function disableScroll() {
+  // 현재 스크롤 위치 저장
+  scrollPosition = window.scrollY;
+
+  // 터치 움직임 차단
+  document.addEventListener('touchmove', preventScroll, { passive: false });
+}
+
+// 키패드가 내려갈 때 스크롤 복구
+function enableScroll() {
+  // 스크롤 위치 복구
+  window.scrollTo(0, scrollPosition);
+
+  // 터치 이벤트 차단 해제
+  document.removeEventListener('touchmove', preventScroll);
+}
+
+function initHeight() {
+  // 모바일 높이 조정   
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', setHeight);
+  } else {
+    window.addEventListener("resize", setHeight);
+  }
 
   setHeight(); // 페이지가 로드될 때 실행
 }
@@ -24,6 +54,19 @@ function initHeight() {
 function setHeight() {
   const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
   document.documentElement.style.height = `${height}px`;
+
+  // 키보드가 올라왔을 때 동작하는 visualViewport resize 이벤트 설정
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', () => {
+      if (window.visualViewport.height < window.innerHeight) {
+          // 키패드가 올라온 상태일 때 스크롤 차단
+          disableScroll();
+      } else {
+          // 키패드가 내려간 상태일 때 스크롤 복구
+          enableScroll();
+      }
+  });
+}
 }
 
 /**

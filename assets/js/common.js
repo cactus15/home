@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   initSwiper();
 
   setDblTouch();
-
-  setPromptScroll();
 });
 
 function initHeight() {
@@ -241,31 +239,4 @@ function setDblTouch() {
     },
     { passive: false }
   );
-}
-
-function setPromptScroll() {
-  const input = document.querySelector("div.prompt input");
-  let scrollPosition = 0;
-
-  // 스크롤 비활성화 함수
-  function disableScroll() {
-    scrollPosition = window.scrollY;
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollPosition}px`;
-    document.body.style.width = "100%";
-  }
-
-  // 스크롤 활성화 함수
-  function enableScroll() {
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.width = "";
-    window.scrollTo(0, scrollPosition); // 이전 스크롤 위치로 복귀
-  }
-
-  // 포커스가 생기면 스크롤 비활성화
-  input.addEventListener("focus", disableScroll);
-
-  // 포커스가 사라지면 스크롤 활성화
-  input.addEventListener("blur", enableScroll);
 }

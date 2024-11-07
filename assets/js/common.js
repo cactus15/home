@@ -9,11 +9,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   setDblTouch();
 
-  const input = document.querySelector(".prompt .input-wrap input[type='text']");
-   
-  // 포커스 및 블러 이벤트 설정
-  input.addEventListener("focus", disableScroll);
-  input.addEventListener("blur", enableScroll);
+  const initHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  // 모바일 높이 조정   
+  if (window.visualViewport) {
+    // 키보드가 올라왔을 때 동작하는 visualViewport resize 이벤트 설정
+    window.visualViewport.addEventListener('resize', () => {
+      if (window.visualViewport.height < initHeight) {
+        // 키패드가 올라온 상태일 때 스크롤 차단
+        disableScroll();
+      } else {
+        // 키패드가 내려간 상태일 때 스크롤 복구
+        enableScroll();
+      }
+    });
+  }
 });
 
 // 스크롤 및 터치 움직임 차단
